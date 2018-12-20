@@ -62,7 +62,7 @@ var config = {
       };
 
       // AJAX post the data to the friends API.
-      $.post("/api/friends", userData, function(data) {
+      $.post("/api/animals", userData, function(data) {
 
         // Grab the result from the AJAX post so that the best match's name and photo are displayed.
         $("#match-name").text(data.name);
@@ -76,3 +76,5 @@ var config = {
       alert("Please fill out all fields before submitting!");
     }
   });
+
+  console.log("hello")
