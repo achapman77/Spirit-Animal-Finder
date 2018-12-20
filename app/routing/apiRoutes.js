@@ -5,31 +5,34 @@
 
 
 
-var animalArr = require("../data/animals");
+var sortedAnimalArr = require("../data/animals");
 // console.log(animalData[0]); 
 // console.log(animalData[0].scores.reduce((a, b) => a + b, 0)); 
 // console.log(animalData)
 
 module.exports = function (app) {
     app.get("/api/animals", function (req, res) {
-        return res.json(animalArr);    
+        return res.json(sortedAnimalArr);    
     });
 
-    // app.post("api/animals", function (req, res) {
+    app.post("api/animals", function (req, res) {
         
-    //     var userScore = rec.body.scores.reduce((a, b) => a + b, 0);
+        var userScore = rec.body.scores.reduce((a, b) => a + b, 0);
 
-    //     for (var i = 0; i < animalArr.length; i++) {
-    //         if (Math.abs(userScore - animalArr[i].totalScore) < Math.abs(userScore - animalArr[i+1].totalScore) ){
-    //             return animalArr[i]
-    //         }
-    //     };
+        function findMatch() {
+            for (var i = 0; i < sortedAnimalArr.length; i++) {
+                if (
+                    Math.abs(userScore - sortedAnimalArr[i].totalScore) < Math.abs(userScore - sortedAnimalArr[i + 1].totalScore)) {
+                    return sortedAnimalArr[i]
+                }
+            };
+        }
 
 
 
 
-
-    // });
+        // sortedAnimalArr.push(req.body);
+    });
 
 
 };

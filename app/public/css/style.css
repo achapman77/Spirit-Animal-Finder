@@ -1,8 +1,40 @@
 body {
     background-color: black;
-    color: whitesmoke
+    color: whitesmoke;
 }
 
 h1 {
     color: whitesmoke;
+}
+
+label {
+    font-size: 1.5em;
+}
+
+.slide-text {
+    /* margin: 0 0.5em; */
+    color:#a9ade0;
+    font-size: 0.75em;
+}
+
+.slider-handle {
+    background: #4b4ef3
+}
+
+.slider-selection {
+    background: #f12323
+}
+
+.slider-selection.tick-slider-selection {
+    background-image: linear-gradient(to bottom,#4b4ef3 0,#8288de 100%);
+    background-repeat: repeat-x
+}
+
+.slider-tick.in-selection {
+    background-image: linear-gradient(to bottom,#4b4ef3 0,#8288de 100%);
+    background-repeat: repeat-x
+}
+
+.slider.slider-horizontal {
+    width: 15em;
 }
