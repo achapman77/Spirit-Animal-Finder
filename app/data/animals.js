@@ -9,20 +9,22 @@ var Animal = function (name, photo, scores) {
     this.totalScore = scores.reduce((a, b) => a + b, 0);
 };
 
-// Animal.prototype.totalScore = function () {
-//     // this.scores.reduce((a, b) => a + b, 0);
-//     this.scores.reduce((a + b), 0);
-// };
+Animal.prototype.totalScore = function () {
+    // this.scores.reduce((a, b) => a + b, 0);
+    return this.scores.reduce((a + b), 0);
+};
 
 // Animal.prototype.addAnimal = function (name, photo, scores) {
 //     this.animalArr.push(new Animal(name, photo, scores));
 // };
+
 
 var squirrel = new Animal(
     "Squirrel",
     "https://www.nationalgeographic.com/content/dam/animals/2018/09/comedy-wildlife-awards-photos/comedy-wildlife-awards-squirel-stop.ngsversion.1537203605960.adapt.1900.1.jpg",
     [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]
 )
+console.log(squirrel.totalScore);
 var hamster = new Animal(
     "Hamster",
     "https://static.boredpanda.com/blog/wp-content/uploads/2015/12/funny-animal-pictures-comedy-wildlife-photography-awards-fb1.png",
@@ -70,23 +72,23 @@ animalArr.push(squirrel, hamster, hippo, lemur, sloth, bear, prarieDog, ostrich 
 
 // console.log(animalArr[0].totalScore)
 
-var sortedAnimalArr = animalArr.sort(function (a, b) {
-    return a.totalScore - b.totalScore
-});
+// var sortedAnimalArr = animalArr.sort(function (a, b) {
+//     return a.totalScore - b.totalScore
+// });
 
 var userScore =30
 
-function findMatch() {
-    for (var i = 0; i < sortedAnimalArr.length; i++) {
-        if (
-            Math.abs(userScore - sortedAnimalArr[i].totalScore) < Math.abs(userScore - sortedAnimalArr[i + 1].totalScore)) {
-            return sortedAnimalArr[i]
-        }
-    };
-}
+// function findMatch() {
+//     for (var i = 0; i < sortedAnimalArr.length; i++) {
+//         if (
+//             Math.abs(userScore - sortedAnimalArr[i].totalScore) < Math.abs(userScore - sortedAnimalArr[i + 1].totalScore)) {
+//             return sortedAnimalArr[i]
+//         }
+//     };
+// }
 
-console.log(findMatch());
+// console.log(findMatch());
 
 // console.log(sortedAnimalArr)
 // module.exports = animalData
-module.exports = sortedAnimalArr;
+// module.exports = sortedAnimalArr;

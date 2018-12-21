@@ -11,6 +11,58 @@ label {
     font-size: 1.5em;
 }
 
+#form-top {
+    border-bottom: 1px solid whitesmoke;
+}
+
+#template-start {
+    margin-top: 1.5em;
+}
+.question {
+    
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.question .label-box {
+    display: flex;
+    flex-direction: row;
+    /* height: 5em; */
+    align-items: center;
+}
+
+.question .input-box {
+    display: flex;
+    flex-direction: row;
+    height: 7em;
+    align-items: center;
+    justify-content: center;
+}
+
+#feeling {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* line-height: 3em; */
+
+}
+#disagree{
+    margin-left: 2em;
+}
+
+#agree{
+    margin-right: 2.5em
+}
+
+
+[data-value=2]: .slider-handle {
+    background: #f12323;
+}
+
+
+
+
+
 .slide-text {
     /* margin: 0 0.5em; */
     color:#a9ade0;
@@ -18,7 +70,8 @@ label {
 }
 
 .slider-handle {
-    background: #4b4ef3
+    background: #4b4ef3;
+   
 }
 
 .slider-selection {
@@ -36,5 +89,5 @@ label {
 }
 
 .slider.slider-horizontal {
-    width: 15em;
+    width: 25em;
 }

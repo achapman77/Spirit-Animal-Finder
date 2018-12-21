@@ -23,53 +23,74 @@
   <div class="container">
     <form>
         <div class="row">
-          <div class="col-md-10 offset-1">
+          <div class="col-md-12">
               <h2>Spirit Survey Questions</h2>
           </div>
         </div>
     
         <div class="row">
-          <div class="col-md-10 offset-1">
+          <div class="col-md-12">
+            <div class = "row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Full Name:</label>
+                  <input type="text" id="name" class="form-control" placeholder="Full Name" required>
+                </div>  
+              </div>
+            </div>
+            <div id="form-top" class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Your Favorite Animal Image URL:</label>
+                  <input type="text" id="photo" class="form-control" placeholder="https://somewhere.com/randomimage.jpg" required>
+                </div>
+              </div>
+            </div>
+            <div id="template-start" class="row">
+              <div id="feeling" class="col-md-6 offset-6">
+                <div id="disagree">DISAGREE</div>
+                <div id="agree">AGREE</div>
+              </div>
+            </div>
             
-            <div class="form-group">
-                <label>Full Name:</label>
-                <input type="text" id="name" class="form-control" placeholder="Full Name" required>
-            </div>
+            
 
-            <div id="imgQ" class="form-group">
-                <label>Your Favorite Animal Image URL:</label>
-                <input type="text" id="photo" class="form-control" placeholder="https://somewhere.com/randomimage.jpg" required>
-            </div>
+            
 
-            <div class="form-group">
+            <div class="form-group question-template question">
               <div class="row">
-                <div class="col-md-6">
-                    <label id="i">Your mind is always buzzing with unexplored ideas and plans.</label>
+                <div class="col-md-6 label-box">
+                    <label id="q-i"></label>
                 </div>
-                <div class="col-md-1 text-right">
-                    <h5 class="slide-text">DISAGREE</h5>
+                
+                <div class="col-md-6 text-center input-box">
+                    <input id="input-i" class="custom-slider" type="text" data-slider-ticks="[1, 2, 3, 4, 5]" data-slider-ticks-snap-bounds="1" data-slider-ticks-labels='["1", "2", "3", "4", "5"]' data-slider-value="1"/>
                 </div>
-                <div class="col-md-4 text-center">
-                    <input id="q-i" class="custom-slider" type="text" data-slider-ticks="[1, 2, 3, 4, 5]" data-slider-ticks-snap-bounds="1" data-slider-ticks-labels='["1", "2", "3", "4", "5"]' data-slider-value="1"/>
-                </div>
-                <div class="col-md-1 text-left">
-                    <h5 class="slide-text">AGREE</h5>
-                </div>
+                
               </div>
             </div><!--End Question-->
             
 
               <!-- Submit Button -->
-              <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
-              Submit</button>
-
-              <footer class="footer">
-                <div class="container">
+            <div class="row">
+              <div class="col-md-6 offset-3">
+                <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
+                  Submit</button>
                   <p><a href="/api/animals">API Animals List</a> | <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a></p>
-                </div>
-              </footer>
+              </div>
+              
+            </div>
+              
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <footer class="footer">
+                  
+                </footer>
+              </div>
+            </div>
+              
             
-          </div><!--End col-md-8-->
+          </div><!--End col-md-10-->
         </div><!--End Row-->
     </form>
   </div><!--End Container-->
