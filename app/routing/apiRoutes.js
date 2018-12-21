@@ -18,7 +18,8 @@ module.exports = function (app) {
     app.post("api/animals", function (req, res) {
         
         var userScore = rec.body.scores.reduce((a, b) => a + b, 0);
-
+        console.log(userScore);
+        
         function findMatch() {
             for (var i = 0; i < sortedAnimalArr.length; i++) {
                 if (
@@ -28,10 +29,10 @@ module.exports = function (app) {
             };
         }
 
+        res.json(findMatch());
 
 
-
-        // sortedAnimalArr.push(req.body);
+        sortedAnimalArr.push(req.body);
     });
 
 

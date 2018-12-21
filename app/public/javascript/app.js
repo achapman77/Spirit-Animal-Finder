@@ -1,7 +1,6 @@
 
 
-
-var questionObj= [
+var questionObj = [
   {
     q: "Your mind is always buzzing with unexplored ideas and plans.",
     id: 1
@@ -44,41 +43,35 @@ var questionObj= [
   }
 ]
 
-console.log(questionObj[0]);
+//Render Questions===============================================
 
 function renderQuestions() {
   $.each(questionObj, function (key, value) {
     var $newQuestion = $(".question-template").clone();
-
     $newQuestion.removeClass("question-template");
-
     $newQuestion.find(`label`).attr(`id`, `q-${this.id}`).text(this.q);
     $newQuestion.find(`input`).attr(`id`, `input-${this.id}`)
     $newQuestion.insertAfter($(`#template-start`));
-    }
-  )
+    })
 };
   
 renderQuestions();
 $(`.question-template`).hide();
 
-//https://seiyria.com/bootstrap-slider/#example-13
+//Slider==========================================================
+//Credit for basic to https://seiyria.com/bootstrap-slider/#example-13
 $(".custom-slider").slider({
   ticks: [1,2,3,4,5],
   ticks_labels: ['1', '2', '3', '4', '5'],
   ticks_snap_bounds: 1,
 });
 
-
-
+//Fully custom CSS transformation based on value
 $(`.input-box`).on(`click`, function () {
-  function resetSliderHandle() {
-    $(this).find(`.slider-tick`).css("background", "#f5f5f5");
-  }
-  
-
+  //Crux was to set data-value of parent to easily 'find' children
   var value = $(this).find(`input`).val();
   console.log(value);
+  
   $(this).attr("data-value", value);
   if (value === "1") {
     $(this).find(`.slider-tick`).css("background", "#f5f5f5");
@@ -108,29 +101,8 @@ $(`.input-box`).on(`click`, function () {
     $(this).find(`.slider-tick.in-selection`).css("background", "rgb(236, 83, 83)");
     $(this).find(`.slider-handle`).css("background", "rgb(236, 83, 83)");
   };
-  // $(this).find(`.slider-tick`).css("background", "#f5f5f5");
 })
 
-// Chosen CSS
-var config = {
-    ".chosen-select": {},
-    ".chosen-select-deselect": {
-      allow_single_deselect: true
-    },
-    ".chosen-select-no-single": {
-      disable_search_threshold: 10
-    },
-    ".chosen-select-no-results": {
-      no_results_text: "Oops, nothing found!"
-    },
-    ".chosen-select-width": {
-      width: "95%"
-    }
-  };
-
-  for (var selector in config) {
-    $(selector).chosen(config[selector]);
-  }
 
   // Capture the form inputs
   $("#submit").on("click", function(event) {
@@ -145,7 +117,7 @@ var config = {
         }
       });
 
-      $(".chosen-select").each(function() {
+      $(".custom-slider").each(function() {
 
         if ($(this).val() === "") {
           isValid = false;
@@ -161,33 +133,35 @@ var config = {
         name: $("#name").val(),
         photo: $("#photo").val(),
         scores: [
-          $("#q1").val(),
-          $("#q2").val(),
-          $("#q3").val(),
-          $("#q4").val(),
-          $("#q5").val(),
-          $("#q6").val(),
-          $("#q7").val(),
-          $("#q8").val(),
-          $("#q9").val(),
-          $("#q10").val()
+          $("#input-1").val(),
+          $("#input-2").val(),
+          $("#input-3").val(),
+          $("#input-4").val(),
+          $("#input-5").val(),
+          $("#input-6").val(),
+          $("#input-7").val(),
+          $("#input-8").val(),
+          $("#input-9").val(),
+          $("#input-10").val()
         ]
       };
+      console.log(userData);
 
-      // AJAX post the data to the friends API.
-      $.post("/api/animals", userData, function(data) {
+      // AJAX post the data to the animal API.
+      $.post("/api/animals", userData)
+          .then(function(data) {
 
-        // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-        $("#match-name").text(data.name);
-        $("#match-img").attr("src", data.photo);
+          // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+          $("#match-name").text(data.name);
+          $("#match-img").attr("src", data.photo);
 
-        // Show the modal with the best match
-        $("#results-modal").modal("toggle");
+          // Show the modal with the best match
+          $("#results-modal").modal("toggle");
 
-      });
+        });
     } else {
       alert("Please fill out all fields before submitting!");
     }
   });
 
-  console.log("hello")
+  
