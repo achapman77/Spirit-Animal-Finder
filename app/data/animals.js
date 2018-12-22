@@ -22,9 +22,9 @@ var Animal = function (name, photo, scores) {
 var squirrel = new Animal(
     "Squirrel",
     "https://www.nationalgeographic.com/content/dam/animals/2018/09/comedy-wildlife-awards-photos/comedy-wildlife-awards-squirel-stop.ngsversion.1537203605960.adapt.1900.1.jpg",
-    [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]
+    [5, 1, 4, 4, 5, 1, 2, 4, 4, 1]
 )
-
+// console.log(squirrel.totalScore)
 var hamster = new Animal(
     "Hamster",
     "https://static.boredpanda.com/blog/wp-content/uploads/2015/12/funny-animal-pictures-comedy-wildlife-photography-awards-fb1.png",
@@ -67,7 +67,25 @@ var ostrich = new Animal(
     [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
 )
 
-animalArr.push(squirrel, hamster, hippo, lemur, sloth, bear, prarieDog, ostrich );
+var donkey = new Animal(
+    "Donkey",
+    "https://i.dailymail.co.uk/i/pix/2017/02/16/11/3D48C65400000578-0-image-a-42_1487242982507.jpg",
+    [4, 2, 2, 3, 5, 4, 3, 5, 1, 5]
+)
+
+var llama = new Animal(
+    "Llama",
+    "http://uberhumor.com/wp-content/uploads/2011/05/these_funny_animals_694_640_04.jpg",
+    [2, 2, 2, 3, 5, 4, 3, 4, 2, 5]
+)
+
+var cow = new Animal(
+    "Long-Horned Cow",
+    "https://kids.nationalgeographic.com/content/dam/kids/photos/articles/Other%20Explore%20Photos/R-Z/Wacky%20Weekend/Funny%20Animal%20Faces/ww-funny-animal-faces-cow.adapt.945.1.jpg",
+    [6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+)
+
+animalArr.push(squirrel, hamster, hippo, lemur, sloth, bear, prarieDog, ostrich, donkey, llama, cow );
 
 
 // console.log(animalArr[0].totalScore)
@@ -91,4 +109,6 @@ var sortedAnimalArr = animalArr.sort(function (a, b) {
 
 // console.log(sortedAnimalArr)
 // module.exports = animalData
+
 module.exports = sortedAnimalArr;
+

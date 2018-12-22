@@ -22,27 +22,29 @@
 
 <body>
 
-  <div class="container">
-
-    <div class="jumbotron">
-      <h1><i class="fas fa-paw"></i> Spirit Animal Finder</h1>
-      <hr>
-      <h2>Answer a few basic questions. </h2>
-      <h2>Then find your spirit animal!</h2>
-      <br>
-
-      <div>
-        <a href="/survey"><button type="button" class="btn btn-lg btn-primary"><h4><span class="glyphicon glyphicon-list-alt"></span> Go to Survey</h4></button></a>
+  <div id="landing" class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+          <h1> Spirit Animal Finder</h1>
       </div>
-
     </div>
-
-    <footer class="footer">
-      <div class="container">
-        <p><a href="/api/animals">API Spirit Animal List</a> | <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a></p>
+    <div class="row">
+      <div id="landing-body" class="col-md-6 offset-3 text-center">
+          <h2>Answer a serires of thought prevoking and scientifically formulated questions. </h2>
+      </br>
+          <h2>Advanced AI will then precisely match you to your spirit animal.</h2>
       </div>
-    </footer>
-
+    </div>
+    <div id="landing-btns" class="row">
+      <div  class="col-md-12 text-center">
+          <a href="/survey"><button id="btn-1" type="button" class="btn btn-lg btn-primary"><i class="fas fa-paw">&nbsp&nbsp</i> Go to Survey &nbsp&nbsp<i class="fas fa-paw">&nbsp&nbsp</i></button></a>
+      </div>
+    </div>
+    <div class="row">
+      <div  class="col-md-12 text-center">
+          <a href="/api/animals"><button id="btn-2" type="button" class="btn btn-lg btn-primary"><i class="fas fa-database">&nbsp&nbsp</i> Spirit Animal API &nbsp&nbsp<i class="fas fa-database"></i></button></a>
+      </div>
+    </div>
   </div>
 <!-- Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

@@ -61,6 +61,43 @@ label {
     border-radius: 10px;
 }
 
+/* LANDING PAGE====================================> */
+#landing {
+    height: 40em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+#landing h1 {
+    border-bottom: 1px solid whitesmoke;
+    padding: 0.5em 0;
+}
+
+#landing-body{
+
+    /* height: 20em; */
+}
+
+/* #landing-btns {
+    margin-bottom: 2.5em;
+} */
+
+#btn-1 {
+    background-color: #4b4ef3;
+    border: none;
+    width: 20em;
+    height: 2.5em;
+    font-size: 2em;
+}
+#btn-2 {
+    background-color: #8288de;
+    border: none;
+    margin-bottom: 2em;
+}
+
+/* FORM============================================== */
 #form-wrapper{
     margin: 2.5em;
 }
@@ -138,6 +175,7 @@ label {
 }
 
 #submit {
+    
     background-color: #4b4ef3 ;
     border: none;
     height: 2em;
@@ -151,4 +189,38 @@ label {
 
 #footer a {
     color: whitesmoke;
+}
+
+/* Modal=============================================== */
+.modal-dialog {
+    min-width: 55em !important;
+    max-width: 55em !important;
+    background-image: url("https://media.giphy.com/media/3ohhwNqFMnb7wZgNnq/giphy.gif");
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    /* padding: 0 2em; */
+}
+
+.modal-content {
+    background-image: url("https://media.giphy.com/media/3ohhwNqFMnb7wZgNnq/giphy.gif");
+}
+#match-img{
+    max-width: 45em;
+    max-height: 45em
+}
+
+.modal-header span {
+    /* background-color: whitesmoke; */
+    color: whitesmoke;
+}
+
+.modal-footer{
+    display: flex;
+    justify-content: center
+}
+#btn-close{
+    background-image: url("https://media.giphy.com/media/xUPGcoeymFuvT4NnFu/giphy.gif");
+    width: 15em;
+    height: 3em;
+    font: 1.75em
 }

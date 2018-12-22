@@ -150,18 +150,38 @@ $(`.input-box`).on(`click`, function () {
       // AJAX post the data to the animal API.
       $.post("/api/animals", userData)
           .then(function(data) {
+            
+            var matchName = data.name.toUpperCase();
 
           // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-          $("#match-name").text(data.name);
+            $("#match-name").text(` ${matchName}!`).css({
+              'color': 'red',
+              'font-size': '1.5em',
+            });
           $("#match-img").attr("src", data.photo);
 
           // Show the modal with the best match
-          $("#results-modal").modal("toggle");
+            $("#results-modal").modal("toggle");
 
-        });
+            
+          })
     } else {
       alert("Please fill out all fields before submitting!");
     }
   });
 
-  
+$(".modal").on("click", function () {
+  console.log("WTF?")
+  $("#name").text("");
+  $("#photo").text("");
+  $("#input-1").attr('value','1');
+  $("#input-2").attr('value','1');
+  $("#input-3").attr('value','1');
+  $("#input-4").attr('value','1');
+  $("#input-5").attr('value','1');
+  $("#input-6").attr('value','1');
+  $("#input-7").attr('value','1');
+  $("#input-8").attr('value','1');
+  $("#input-9").attr('value','1');
+  $("#input-10").attr('value','1');
+})
