@@ -11,4 +11,15 @@ Demo: https://spirit-animal-finder.herokuapp.com/
 
 ## Technologies
 * Node.js
-* Express
+* Express.js
+* AJAX (JSON API call)
+* Bootstrap
+* CSS
+* Jquery
+* HTML
+
+## Future Improvements
+ * [ ] More animals!
+ * [ ] Reset Form
+ * [ ] Improve slider mechanics
+ * [ ] Randomize questions
